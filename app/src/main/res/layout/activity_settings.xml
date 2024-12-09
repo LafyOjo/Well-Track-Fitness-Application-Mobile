@@ -1,0 +1,190 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SupplementalActivities.SettingsActivity">
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:id="@+id/scrollViewContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/custombottomnavigation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Profile Section -->
+            <ImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_placeholder" />
+
+            <Button
+                android:id="@+id/uploadImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload Image"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp" />
+
+            <!-- Premium Toggle -->
+            <TextView
+                android:id="@+id/premiumStatusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Premium Status"
+                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp" />
+
+            <Switch
+                android:id="@+id/premiumStatusSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp" />
+
+            <!-- Notification Color -->
+            <TextView
+                android:id="@+id/notificationColorLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notification Color"
+                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp" />
+
+            <View
+                android:id="@+id/colorPreview"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#6200EE"
+                android:layout_marginTop="16dp" />
+
+            <Button
+                android:id="@+id/changeColorButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Color"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp" />
+
+            <!-- Reminder Section -->
+            <Button
+                android:id="@+id/setReminderButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Reminder"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/reminderTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reminder Time: Not Set"
+                android:textSize="16sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp" />
+
+            <Button
+                android:id="@+id/selectDaysButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Reminder Days"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/selectedDaysText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selected Days: None"
+                android:textSize="16sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp" />
+
+            <!-- User Info Section -->
+            <TextView
+                android:id="@+id/labelUserInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Information"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp" />
+
+            <EditText
+                android:id="@+id/editUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Username"
+                android:inputType="textPersonName"
+                android:layout_marginTop="8dp" />
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Email"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="8dp" />
+
+            <EditText
+                android:id="@+id/editAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Age"
+                android:inputType="number"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/saveUserInfoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save User Info"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/txtPremiumStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Premium Status: "
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/saveSettingsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Settings"
+                android:backgroundTint="#6200EE"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Custom Bottom Navigation -->
+    <include
+        android:id="@+id/custombottomnavigation"
+        layout="@layout/custombottomnavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

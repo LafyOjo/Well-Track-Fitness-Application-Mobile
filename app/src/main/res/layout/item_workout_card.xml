@@ -1,0 +1,42 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="@drawable/card_background">
+
+    <!-- Workout Image -->
+    <ImageView
+        android:id="@+id/imageWorkout"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Workout Text Information -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/textWorkoutTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Workout Title"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Details -->
+        <TextView
+            android:id="@+id/textWorkoutDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123 cal • 12 min"
+            android:textSize="14sp"
+            android:textColor="#666666" />
+    </LinearLayout>
+</LinearLayout>

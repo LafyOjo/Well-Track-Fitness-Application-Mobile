@@ -1,0 +1,76 @@
+<!-- activity_workout_details.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txtWorkoutTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Workout Title"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imgWorkout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_placeholder" />
+
+    <TextView
+        android:id="@+id/txtWorkoutDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duration: 30 mins" />
+
+    <TextView
+        android:id="@+id/txtCalories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calories: 200" />
+
+    <TextView
+        android:id="@+id/txtCourseStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Free" />
+
+    <TextView
+        android:id="@+id/txtWorkoutDescription1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description 1" />
+
+    <TextView
+        android:id="@+id/txtWorkoutDescription2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description 2" />
+
+    <TextView
+        android:id="@+id/txtCompletedWorkouts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Completed Workouts:" />
+
+    <ImageView
+        android:id="@+id/lockIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_premium_badge" />
+
+    <Button
+        android:id="@+id/startWorkoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/primaryColor"
+        android:textColor="@android:color/white"
+        android:text="@string/start_workout" />
+</LinearLayout>

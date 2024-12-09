@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Bundle Cover Image -->
+    <ImageView
+        android:id="@+id/imageBundle"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/bundle_cover_image" />
+
+    <!-- Bundle Title -->
+    <TextView
+        android:id="@+id/textBundleTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/black" />
+
+    <!-- Bundle Description -->
+    <TextView
+        android:id="@+id/textBundleDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        android:textColor="@android:color/darker_gray" />
+
+    <!-- Premium Badge -->
+    <ImageView
+        android:id="@+id/premiumBadge"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_premium_badge"
+        android:visibility="gone" />
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Workout Title"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Workout Description"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btnEnroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enroll"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

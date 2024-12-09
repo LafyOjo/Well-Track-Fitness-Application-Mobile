@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WellTrackApplicationAssignment2"
+        tools:targetApi="31">
+
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".SupplementalActivities.WelcomeActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activityClasses.MainActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" />
+
+        <!-- Bundle Details Activity -->
+        <activity
+            android:name=".SupplementalActivities.BundleDetailsActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" />
+
+        <!-- Settings Activity -->
+        <activity
+            android:name=".SupplementalActivities.SettingsActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Statistics Activity -->
+        <activity
+            android:name=".SupplementalActivities.StatisticsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.WellTrackApplicationAssignment2"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" />
+
+        <!-- Workout Details Activity -->
+        <activity
+            android:name=".SupplementalActivities.WorkoutDetailsActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" />
+
+        <!-- Workout Pack Details Activity -->
+        <activity
+            android:name=".SupplementalActivities.WorkoutPackDetailsActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" />
+
+        <!-- Store Activity -->
+        <activity
+            android:name=".SupplementalActivities.StoreActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" />
+
+        <!-- Enrolled Courses Activity -->
+        <activity
+            android:name=".SupplementalActivities.EnrolledCoursesActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" />
+
+        <!-- See All Courses Activity -->
+        <activity
+            android:name=".SupplementalActivities.CourseDetailsActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified">
+        </activity>
+
+        <activity android:name=".WorkoutActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified"
+            />
+
+        <!-- See All Activity -->
+        <activity
+            android:name=".activityClasses.SeeAllActivity"
+            android:exported="false"
+            android:label="@string/title_see_all"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" >
+        </activity>
+
+        <!-- Workout Promo Description Activity -->
+        <activity
+            android:name=".SupplementalActivities.WorkoutPromoDescriptionActivity"
+            android:exported="false"
+            android:label="@string/title_workout_promo"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" >
+        </activity>
+
+        <receiver android:name=".Utils.ReminderBroadcastReceiver" />
+
+    </application>
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+</manifest>

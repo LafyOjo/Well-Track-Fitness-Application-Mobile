@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">WellTrack Application Assignment 2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="course_image">Course Image</string>
+    <string name="app_logo_description">App Logo</string>
+    <string name="profile_icon_description">Profile Icon</string>
+    <string name="visit_store">Visit the Store</string>
+    <string name="browse_courses">Browse new courses and add them to your library</string>
+    <string name="my_courses">My Courses</string>
+    <string name="see_all">See All</string>
+    <string name="trending_courses">Trending Courses</string>
+    <string name="textCourseDescription"> Text Description</string>
+    <string name="enrolled_courses"> Your Enrolled Courses</string>
+    <string name="more_courses_you_can_view"> View More Courses</string>
+    <string name="view_more_courses">More Courses You Can View</string>
+    <string name="view_workout_packs">View Workout Packs</string>
+    <string name="enroll">Enroll</string>
+    <string name="view_details">View Details</string>
+    <string name="workout_packs"> Workout Packs </string>
+    <string name="bundle_cover_image">Image</string>
+    <string name="workout_image">Workout Image</string>
+    <string name="time_format">%ds</string>
+    <string name="calories_format">%d Calories</string>
+    <string name="completed_workouts_format">%d Workouts Completed</string>
+    <string name="premium_lock">Premium Locked</string>
+    <string name="start_workout">Start Workout</string>
+    <string name="textFavoriteWorkout">Favorite Workout</string>
+    <string name="textTotalEnrolledCourses">Total Enrolled Courses</string>
+    <string name="textAverageWorkoutsPerDay">Average Workouts Per Day</string>
+    <string name="textTotalWorkoutsCompleted">Total Workouts Completed</string>
+    <string name="textTotalTimeSpentOnWorkouts">Total Time Spent On Workouts</string>
+    <string name="textTotalCaloriesBurned">Total Calories Burned</string>
+    <string name="premium_courses">Premium Courses</string>
+    <string name="workout_bundle">Workout Bundle</string>
+    <string name="workout_bundle_description">Workout Bundle Description</string>
+    <string name="workout_bundle_title">Workout Bundle Title</string>
+    <string name="workout_bundle_image">Workout Bundle Image</string>
+    <string name="workout_bundle_price">Workout Bundle Price</string>
+    <string name="workout_bundle_duration">Workout Bundle Duration</string>\
+    <string name="workout_bundle_calories">Workout Bundle Calories</string>
+    <string name="workout_bundle_difficulty">Workout Bundle Difficulty</string>
+    <string name="title_see_all">See All</string>
+    <string name="title_workout_promo">Workout Promo</string>
+    <string name="no_unenrolled_workouts">No unenrolled workouts available.</string>
+    <string name="home">Home</string>
+    <string name="store">Store</string>
+    <string name="statistics">Statistics</string>
+    <string name="settings">Settings</string>
+    <string name="workout_bundle_difficulty_easy">Easy</string>
+
+
+</resources>

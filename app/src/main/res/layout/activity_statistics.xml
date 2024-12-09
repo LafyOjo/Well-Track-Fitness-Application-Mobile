@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="56dp">
+
+        <!-- Progress Tracking Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Statistics Page"
+            android:textColor="@color/beige"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingBottom="16dp" />
+
+        <!-- Date Section -->
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="January 12th"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="24dp" />
+
+        <!-- Favorite Workout and Enrolled Courses -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingBottom="24dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <!-- Favorite Workout -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/beige"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textFavoriteWorkout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Favorite Workout"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:paddingBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/textFavoriteWorkoutName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="The HIIT"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Total Enrolled Courses -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/beige"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textTotalEnrolledCourses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total No. Of Enrolled Courses"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:paddingBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/textTotalEnrolledCoursesCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Statistics Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <!-- Average Workouts Per Day -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="@color/beige"
+                android:layout_marginBottom="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textAverageWorkoutsPerDayLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Average No. Of Workouts Per Day"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textAverageWorkoutsPerDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3,679"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Total Workouts Completed -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="@color/beige"
+                android:layout_marginBottom="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textTotalWorkoutsCompletedLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No. Of Workouts Completed"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textTotalWorkoutsCompleted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3,679"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Total Time Spent on Workouts -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="@color/beige"
+                android:layout_marginBottom="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textTotalTimeSpentLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Time Spent On Workouts"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textTotalTimeSpentOnWorkouts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5,789"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Total Calories Burned -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="@color/beige"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textTotalCaloriesBurnedLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Calories Burned"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textTotalCaloriesBurned"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,859"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Custom Bottom Navigation -->
+    <include
+        android:id="@+id/custombottomnavigation"
+        layout="@layout/custombottomnavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

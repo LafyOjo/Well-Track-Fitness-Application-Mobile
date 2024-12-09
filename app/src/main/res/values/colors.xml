@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="beige">#E6B162</color>
+    <color name="purple">#C747DD</color>
+    <color name="pink">#FF43AA</color>
+    <color name="bottom_nav_icon_color">#000000</color> <!-- Replace with your desired color -->
+    <color name="bottom_nav_text_color">#000000</color> <!-- Replace with your desired color -->
+    <color name="primaryColor">#6200EE</color> <!-- Example: Purple -->
+    <color name="secondaryTextColor">#757575</color> <!-- Example: Gray -->
+    <color name="primaryTextColor">#212121</color> <!-- Example: Dark Gray -->
+    <color name="progress_background">#E0E0E0</color>
+    <color name="progress_foreground">#6200EE</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name='purple_700'>#5412AD</color>
+</resources>

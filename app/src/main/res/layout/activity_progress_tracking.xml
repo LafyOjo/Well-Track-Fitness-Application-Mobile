@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Favorite Workout Section -->
+    <TextView
+        android:id="@+id/textFavoriteWorkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favorite Workout"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Total Enrolled Courses Section -->
+    <TextView
+        android:id="@+id/textTotalEnrolledCourses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Enrolled Courses"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Statistics Section -->
+    <TextView
+        android:id="@+id/textAverageWorkoutsPerDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Average Workouts Per Day"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textTotalWorkoutsCompleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Workouts Completed"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textTotalTimeSpentOnWorkouts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Time Spent On Workouts"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textTotalCaloriesBurned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Calories Burned"
+        android:textSize="16sp" />
+
+</LinearLayout>

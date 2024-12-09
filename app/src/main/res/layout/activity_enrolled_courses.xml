@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".SupplementalActivities.EnrolledCoursesActivity">
+
+    <!-- Page Title -->
+    <TextView
+        android:id="@+id/tvPageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enrolled Courses"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="@color/primaryColor"
+        android:textColor="@android:color/white" />
+
+    <!-- RecyclerView for Listing Enrolled Courses -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEnrolledCourses"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_enrolled_course" />
+
+    <!-- No Courses Text Placeholder -->
+    <TextView
+        android:id="@+id/tvNoCourses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You are not enrolled in any courses."
+        android:textSize="16sp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="16dp"
+        android:textColor="@color/secondaryTextColor" />
+
+</LinearLayout>

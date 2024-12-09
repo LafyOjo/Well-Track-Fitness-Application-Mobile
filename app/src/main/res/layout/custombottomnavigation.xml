@@ -1,0 +1,114 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:padding="8dp"
+    android:gravity="center">
+
+    <!-- Home Button -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/navigation_home"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_home"
+            android:contentDescription="@string/home"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Store Button -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/navigation_store"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_store"
+            android:contentDescription="@string/store"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Store"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Statistics Button -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/navigation_statistics"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_statistics"
+            android:contentDescription="@string/statistics"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Statistics"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Settings Button -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/navigation_settings"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_settings"
+            android:contentDescription="@string/settings"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+</LinearLayout>
