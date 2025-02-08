@@ -1,4 +1,3 @@
-
 package com.example.welltrackapplicationassignment2.SupplementalActivities
 
 import android.os.Bundle
@@ -10,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.welltrackapplicationassignment2.Course
+import com.example.welltrackapplicationassignment2.Utils.Course
 import com.example.welltrackapplicationassignment2.R
 
 class CourseDetailsActivity : AppCompatActivity() {

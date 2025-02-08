@@ -8,15 +8,15 @@ import android.widget.TextView
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import com.example.welltrackapplicationassignment2.R
-import com.example.welltrackapplicationassignment2.WorkoutBundle
+import com.example.welltrackapplicationassignment2.Utils.WorkoutBundle
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.welltrackapplicationassignment2.SupplementalActivities.WorkoutPackDetailsActivity
 import com.example.welltrackapplicationassignment2.SupplementalActivities.WorkoutDetailsActivity
 import com.example.welltrackapplicationassignment2.databinding.ActivityWorkoutPackDetailsBinding
-import com.example.welltrackapplicationassignment2.StretchProgram
-import com.example.welltrackapplicationassignment2.datavaseInfo
+import com.example.welltrackapplicationassignment2.Utils.StretchProgram
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
 
 class WorkoutBundleAdapter(
     private val bundles: List<WorkoutBundle>,

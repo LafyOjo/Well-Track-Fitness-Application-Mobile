@@ -1,4 +1,4 @@
-package com.example.welltrackapplicationassignment2.SupplementalActivities
+package com.example.welltrackapplicationassignment2.ApplicationPageActivities
 
 import android.app.Activity
 import android.app.AlarmManager
@@ -9,8 +9,10 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -18,13 +20,15 @@ import androidx.core.content.ContextCompat
 import com.example.welltrackapplicationassignment2.Models.SettingsModel
 import com.example.welltrackapplicationassignment2.Presenter.SettingsPresenter
 import com.example.welltrackapplicationassignment2.R
-import com.example.welltrackapplicationassignment2.Utils.ReminderBroadcastReceiver
-import com.example.welltrackapplicationassignment2.UserProfile
+import com.example.welltrackapplicationassignment2.Utils.UserProfile
 import com.example.welltrackapplicationassignment2.Utils.NotificationService
+import com.example.welltrackapplicationassignment2.Utils.ReminderBroadcastReceiver
 import com.example.welltrackapplicationassignment2.Views.SettingsView
-import com.example.welltrackapplicationassignment2.activityClasses.MainActivity
 import com.example.welltrackapplicationassignment2.databinding.ActivitySettingsBinding
-import com.example.welltrackapplicationassignment2.datavaseInfo
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
 import java.util.Calendar
 
 class SettingsActivity : AppCompatActivity(), SettingsView {
@@ -57,15 +61,31 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
         binding.setReminderButton.setOnClickListener {
             showTimePickerDialog() // Correct function to show the time picker
         }
+
+        val shareButton = findViewById<Button>(R.id.shareButton)
+        shareButton.setOnClickListener {
+            shareApp()
+        }
+    }
+
+    private fun shareApp() {
+        val shareIntent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain" // Specifies sharing text content
+            putExtra(Intent.EXTRA_TEXT, "Check out this amazing app: https://yourapp.link")
+        }
+
+        // Show the share menu
+        val chooserIntent = Intent.createChooser(shareIntent, "Share via")
+        startActivity(chooserIntent)
     }
 
     private fun setupBottomNavigation() {
         binding.custombottomnavigation.navigationHome.findViewById<ImageButton>(R.id.navigation_home)
             .setOnClickListener {
                 val intent = Intent(this, MainActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
-                overridePendingTransition(0, 0) // No animation
+                finish() // Finish SettingsActivity to prevent it from staying in the back stack
             }
 
         binding.custombottomnavigation.navigationStore.findViewById<ImageButton>(R.id.navigation_store)
@@ -73,7 +93,6 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
                 val intent = Intent(this, StoreActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
                 startActivity(intent)
-                overridePendingTransition(0, 0) // No animation
             }
 
         binding.custombottomnavigation.navigationStatistics.findViewById<ImageButton>(R.id.navigation_statistics)
@@ -81,12 +100,7 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
                 val intent = Intent(this, StatisticsActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
                 startActivity(intent)
-                overridePendingTransition(0, 0)
             }
-
-        binding.custombottomnavigation.navigationSettings.findViewById<ImageButton>(R.id.navigation_settings)
-            .setOnClickListener {
-                }
     }
 
     private fun navigateTo(destination: Class<*>) {
@@ -94,6 +108,17 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
         intent.flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
         startActivity(intent)
         overridePendingTransition(0, 0)
+    }
+
+    private fun shareAppContent(content: String) {
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, content)
+        }
+
+        // Show chooser dialog
+        val chooser = Intent.createChooser(intent, "Share using...")
+        startActivity(chooser)
     }
 
     private fun setupListeners() {
@@ -149,14 +174,38 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
             data?.data?.let { uri ->
-                binding.profileImageView.setImageURI(uri)
-                saveProfileImageUri(uri.toString())
+                try {
+                    saveImageLocally(uri)
+                    Toast.makeText(this, "Profile image updated successfully!", Toast.LENGTH_SHORT).show()
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    Toast.makeText(this, "Image selection failed", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
+
+    private fun saveImageLocally(uri: Uri) {
+        try {
+            val inputStream = contentResolver.openInputStream(uri)
+            val file = File(filesDir, "profile_image.jpg")
+            val outputStream = FileOutputStream(file)
+
+            inputStream?.copyTo(outputStream)
+            inputStream?.close()
+            outputStream.close()
+
+            // Update UI and save file path in SharedPreferences
+            binding.profileImageView.setImageURI(Uri.fromFile(file))
+            saveProfileImageUri(file.absolutePath)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(this, "Failed to save image", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     private fun showReminderDialog() {
         val reminderOptions = arrayOf("Morning", "Afternoon", "Evening")
@@ -219,19 +268,51 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
     }
 
 
-    private fun saveProfileImageUri(uri: String) {
+    private fun saveProfileImageUri(filePath: String) {
         val sharedPreferences = getSharedPreferences("user_settings", MODE_PRIVATE)
-        sharedPreferences.edit().putString("profile_image_uri", uri).apply()
-        Toast.makeText(this, "Profile image updated successfully!", Toast.LENGTH_SHORT).show()
+        sharedPreferences.edit().putString("profile_image_uri", filePath).apply()
     }
+
 
     private fun loadProfileImage() {
         val sharedPreferences = getSharedPreferences("user_settings", MODE_PRIVATE)
         val uriString = sharedPreferences.getString("profile_image_uri", null)
         uriString?.let { uri ->
-            binding.profileImageView.setImageURI(Uri.parse(uri))
+            try {
+                // Open the input stream from the content URI
+                val inputStream = contentResolver.openInputStream(Uri.parse(uri))
+                    ?: throw FileNotFoundException("Unable to open input stream for URI: $uri")
+
+                // Save the image locally to avoid Google Photos content provider issues
+                val savedFile = File(filesDir, "profile_image.jpg")
+                val outputStream = FileOutputStream(savedFile)
+                inputStream.copyTo(outputStream)
+                outputStream.close()
+                inputStream.close()
+
+                // Load the image into the ImageView
+                binding.profileImageView.setImageURI(Uri.fromFile(savedFile))
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Toast.makeText(this, "Failed to load image. Please select another.", Toast.LENGTH_SHORT).show()
+            }
         }
     }
+
+
+    private fun copyImageLocally(uri: Uri) {
+        try {
+            val inputStream = contentResolver.openInputStream(uri)
+            val file = File(getExternalFilesDir(null), "profile_image.jpg")
+            val outputStream = FileOutputStream(file)
+            inputStream?.copyTo(outputStream)
+            binding.profileImageView.setImageURI(Uri.fromFile(file))
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(this, "Failed to copy image locally.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     private fun showColorPickerDialog() {
         val colors = arrayOf("Red", "Green", "Blue", "Yellow", "Cyan", "Magenta")
@@ -331,25 +412,27 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
-        alarmManager.setExact(
-            AlarmManager.RTC_WAKEUP,
-            triggerTime,
-            pendingIntent
-        )
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (alarmManager.canScheduleExactAlarms()) {
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP, triggerTime, pendingIntent)
+            } else {
+                requestExactAlarmPermission()
+            }
+        } else {
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, triggerTime, pendingIntent)
+        }
 
         Toast.makeText(this, "Reminder set successfully!", Toast.LENGTH_SHORT).show()
     }
 
+
     private fun requestExactAlarmPermission() {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val intent = Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM).apply {
                 data = Uri.fromParts("package", packageName, null)
             }
             startActivity(intent)
         }
     }
-
-
-
 }
 

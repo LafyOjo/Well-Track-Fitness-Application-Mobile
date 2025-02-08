@@ -1,4 +1,4 @@
-package com.example.welltrackapplicationassignment2
+package com.example.welltrackapplicationassignment2.SupplementalActivities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.welltrackapplicationassignment2.SupplementalActivities.WorkoutDetailsActivity
+import com.example.welltrackapplicationassignment2.Utils.StretchProgram
 import com.example.welltrackapplicationassignment2.adapters.CourseAdapter
 import com.example.welltrackapplicationassignment2.databinding.ActivityEnrolledWorkoutsBinding
 

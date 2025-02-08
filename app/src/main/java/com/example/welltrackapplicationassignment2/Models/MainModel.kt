@@ -1,8 +1,7 @@
 package com.example.welltrackapplicationassignment2.Models
 
-import Workout
-import com.example.welltrackapplicationassignment2.StretchProgram
-import com.example.welltrackapplicationassignment2.datavaseInfo
+import com.example.welltrackapplicationassignment2.Utils.StretchProgram
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
 
 class MainModel(private val databaseInfo: datavaseInfo) {
 

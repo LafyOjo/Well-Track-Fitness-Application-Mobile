@@ -1,4 +1,4 @@
-package com.example.welltrackapplicationassignment2
+package com.example.welltrackapplicationassignment2.SupplementalActivities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.welltrackapplicationassignment2.ApplicationPageActivities.MainActivity
+import com.example.welltrackapplicationassignment2.R
 import com.example.welltrackapplicationassignment2.SupplementalActivities.CircularProgressBar
-import com.example.welltrackapplicationassignment2.activityClasses.MainActivity
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
 import com.example.welltrackapplicationassignment2.databinding.ActivityWorkoutBinding
 
 class WorkoutActivity : AppCompatActivity() {

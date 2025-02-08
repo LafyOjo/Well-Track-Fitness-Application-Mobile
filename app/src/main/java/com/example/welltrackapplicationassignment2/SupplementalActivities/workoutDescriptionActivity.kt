@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.welltrackapplicationassignment2.databinding.ActivityWorkoutPromoBinding
-import com.example.welltrackapplicationassignment2.datavaseInfo
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
 
 class WorkoutPromoDescriptionActivity : AppCompatActivity() {
 

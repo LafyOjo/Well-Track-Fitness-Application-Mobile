@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.welltrackapplicationassignment2.R
-import com.example.welltrackapplicationassignment2.StretchProgram
+import com.example.welltrackapplicationassignment2.Utils.StretchProgram
 
 class StretchProgramAdapter(
     private val courses: List<StretchProgram>,

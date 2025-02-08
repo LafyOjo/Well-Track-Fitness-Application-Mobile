@@ -1,4 +1,4 @@
-package com.example.welltrackapplicationassignment2.SupplementalActivities
+package com.example.welltrackapplicationassignment2.ApplicationPageActivities
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,9 +9,8 @@ import com.example.welltrackapplicationassignment2.Models.MainModel
 import com.example.welltrackapplicationassignment2.Presenter.StatisticsPresenter
 import com.example.welltrackapplicationassignment2.R
 import com.example.welltrackapplicationassignment2.Views.StatisticsView
-import com.example.welltrackapplicationassignment2.activityClasses.MainActivity
 import com.example.welltrackapplicationassignment2.databinding.ActivityStatisticsBinding
-import com.example.welltrackapplicationassignment2.datavaseInfo
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
 
 class StatisticsActivity : AppCompatActivity(), StatisticsView {
 

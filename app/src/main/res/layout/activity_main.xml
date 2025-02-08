@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F6FA"
-    tools:context=".activityClasses.MainActivity">
+    tools:context=".ApplicationPageActivities.MainActivity">
 
     <!-- Main Content Scrollable Area -->
     <androidx.core.widget.NestedScrollView

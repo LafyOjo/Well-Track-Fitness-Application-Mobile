@@ -1,7 +1,7 @@
 package com.example.welltrackapplicationassignment2.Models
 
-import com.example.welltrackapplicationassignment2.datavaseInfo
-import com.example.welltrackapplicationassignment2.StretchProgram
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
+import com.example.welltrackapplicationassignment2.Utils.StretchProgram
 
 class StoreModel(private val database: datavaseInfo) {
 

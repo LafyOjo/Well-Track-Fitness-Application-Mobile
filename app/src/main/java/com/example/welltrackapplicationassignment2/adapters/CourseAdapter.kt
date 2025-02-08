@@ -3,7 +3,7 @@ package com.example.welltrackapplicationassignment2.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.welltrackapplicationassignment2.StretchProgram
+import com.example.welltrackapplicationassignment2.Utils.StretchProgram
 import com.example.welltrackapplicationassignment2.databinding.ItemCourseCardBinding
 
 class CourseAdapter(

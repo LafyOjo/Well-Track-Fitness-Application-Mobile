@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SupplementalActivities.SettingsActivity">
+    tools:context=".ApplicationPageActivities.SettingsActivity">
 
     <!-- Scrollable Content -->
     <ScrollView
@@ -20,6 +20,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
+
+            <Button
+                android:id="@+id/shareButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/primaryColor"
+                android:text="Share"
+                android:textColor="@android:color/white" />
 
             <!-- Profile Section -->
             <ImageView
@@ -39,14 +48,16 @@
                 android:layout_marginTop="16dp" />
 
             <!-- Premium Toggle -->
+
+            <!-- Notification Color -->
             <TextView
                 android:id="@+id/premiumStatusLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Premium Status"
-                android:textSize="18sp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="24dp" />
+                android:layout_marginTop="24dp"
+                android:text="Premium Status"
+                android:textSize="18sp" />
 
             <Switch
                 android:id="@+id/premiumStatusSwitch"
@@ -55,7 +66,6 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp" />
 
-            <!-- Notification Color -->
             <TextView
                 android:id="@+id/notificationColorLabel"
                 android:layout_width="wrap_content"
@@ -65,13 +75,13 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="24dp" />
 
-            <View
-                android:id="@+id/colorPreview"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="#6200EE"
-                android:layout_marginTop="16dp" />
+<!--            <View-->
+<!--                android:id="@+id/colorPreview"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:background="#6200EE"-->
+<!--                android:layout_marginTop="16dp" />-->
 
             <Button
                 android:id="@+id/changeColorButton"
@@ -175,6 +185,8 @@
                 android:backgroundTint="#6200EE"
                 android:textColor="#FFFFFF"
                 android:layout_marginTop="16dp" />
+
+
 
         </LinearLayout>
     </ScrollView>

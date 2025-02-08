@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -31,7 +27,7 @@
         </activity>
 
         <activity
-            android:name=".activityClasses.MainActivity"
+            android:name=".ApplicationPageActivities.MainActivity"
             android:exported="false"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="unspecified" />
@@ -45,19 +41,15 @@
 
         <!-- Settings Activity -->
         <activity
-            android:name=".SupplementalActivities.SettingsActivity"
+            android:name=".ApplicationPageActivities.SettingsActivity"
             android:exported="true"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="unspecified" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <!-- Statistics Activity -->
         <activity
-            android:name=".SupplementalActivities.StatisticsActivity"
+            android:name=".ApplicationPageActivities.StatisticsActivity"
             android:exported="true"
             android:theme="@style/Theme.WellTrackApplicationAssignment2"
             android:configChanges="orientation|screenSize"
@@ -79,7 +71,7 @@
 
         <!-- Store Activity -->
         <activity
-            android:name=".SupplementalActivities.StoreActivity"
+            android:name=".ApplicationPageActivities.StoreActivity"
             android:exported="false"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="unspecified" />
@@ -99,14 +91,14 @@
             android:screenOrientation="unspecified">
         </activity>
 
-        <activity android:name=".WorkoutActivity"
+        <activity android:name=".SupplementalActivities.WorkoutActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="unspecified"
             />
 
         <!-- See All Activity -->
         <activity
-            android:name=".activityClasses.SeeAllActivity"
+            android:name=".ApplicationPageActivities.SeeAllActivity"
             android:exported="false"
             android:label="@string/title_see_all"
             android:configChanges="orientation|screenSize"
@@ -129,9 +121,14 @@
     <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 </manifest>

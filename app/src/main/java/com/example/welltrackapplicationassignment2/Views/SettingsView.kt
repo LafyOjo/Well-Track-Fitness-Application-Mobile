@@ -1,6 +1,6 @@
 package com.example.welltrackapplicationassignment2.Views
 
-import com.example.welltrackapplicationassignment2.UserProfile
+import com.example.welltrackapplicationassignment2.Utils.UserProfile
 
 interface SettingsView {
     fun displayUserProfile(profile: UserProfile)

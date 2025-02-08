@@ -1,4 +1,4 @@
-package com.example.welltrackapplicationassignment2.activityClasses
+package com.example.welltrackapplicationassignment2.ApplicationPageActivities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.welltrackapplicationassignment2.Models.MainModel
 import com.example.welltrackapplicationassignment2.Presenter.SeeAllPresenter
-import com.example.welltrackapplicationassignment2.StretchProgram
+import com.example.welltrackapplicationassignment2.Utils.StretchProgram
 import com.example.welltrackapplicationassignment2.SupplementalActivities.WorkoutDetailsActivity
 import com.example.welltrackapplicationassignment2.Views.SeeAllView
 import com.example.welltrackapplicationassignment2.adapters.CourseAdapter
 import com.example.welltrackapplicationassignment2.databinding.ActivitySeeAllBinding
-import com.example.welltrackapplicationassignment2.datavaseInfo
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
 
 class SeeAllActivity : AppCompatActivity(), SeeAllView {
 

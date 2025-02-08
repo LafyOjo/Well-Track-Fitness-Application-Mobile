@@ -1,22 +1,20 @@
-package com.example.welltrackapplicationassignment2.SupplementalActivities
+package com.example.welltrackapplicationassignment2.ApplicationPageActivities
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.welltrackapplicationassignment2.Models.StoreModel
 import com.example.welltrackapplicationassignment2.Presenter.StorePresenter
 import com.example.welltrackapplicationassignment2.R
-import com.example.welltrackapplicationassignment2.StretchProgram
+import com.example.welltrackapplicationassignment2.Utils.StretchProgram
+import com.example.welltrackapplicationassignment2.SupplementalActivities.WorkoutPromoDescriptionActivity
 import com.example.welltrackapplicationassignment2.Views.StoreView
-import com.example.welltrackapplicationassignment2.activityClasses.MainActivity
-import com.example.welltrackapplicationassignment2.activityClasses.MainActivity.Companion.SETTINGS_REQUEST_CODE
 import com.example.welltrackapplicationassignment2.adapters.CourseAdapter
 import com.example.welltrackapplicationassignment2.databinding.ActivityStoreBinding
-import com.example.welltrackapplicationassignment2.datavaseInfo
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
 
 class StoreActivity : AppCompatActivity(), StoreView {
 

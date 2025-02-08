@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WorkoutActivity">
+    tools:context=".SupplementalActivities.WorkoutActivity">
 
     <!-- Back Button -->
     <ImageView
         android:id="@+id/backButton"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:src="@drawable/ic_placeholder"
+        android:src="@drawable/backbutton"
         android:contentDescription="Back"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -110,5 +110,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="32dp" />
+        android:layout_marginBottom="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

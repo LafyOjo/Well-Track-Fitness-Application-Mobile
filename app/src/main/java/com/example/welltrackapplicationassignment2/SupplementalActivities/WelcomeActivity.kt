@@ -8,8 +8,8 @@ import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.welltrackapplicationassignment2.ApplicationPageActivities.MainActivity
 import com.example.welltrackapplicationassignment2.R
-import com.example.welltrackapplicationassignment2.activityClasses.MainActivity
 import com.example.welltrackapplicationassignment2.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity() {

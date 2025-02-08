@@ -4,10 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.welltrackapplicationassignment2.StretchProgram
+import com.example.welltrackapplicationassignment2.Utils.StretchProgram
 import com.example.welltrackapplicationassignment2.adapters.CourseAdapter
 import com.example.welltrackapplicationassignment2.databinding.ActivityBundleDetailsBinding
-import com.example.welltrackapplicationassignment2.datavaseInfo
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
 
 class BundleDetailsActivity : AppCompatActivity() {
 

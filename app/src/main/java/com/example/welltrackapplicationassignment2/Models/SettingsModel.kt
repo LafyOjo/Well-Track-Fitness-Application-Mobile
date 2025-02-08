@@ -1,7 +1,7 @@
 package com.example.welltrackapplicationassignment2.Models
 
-import com.example.welltrackapplicationassignment2.datavaseInfo
-import com.example.welltrackapplicationassignment2.UserProfile
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
+import com.example.welltrackapplicationassignment2.Utils.UserProfile
 
 class SettingsModel(private val database: datavaseInfo) {
 

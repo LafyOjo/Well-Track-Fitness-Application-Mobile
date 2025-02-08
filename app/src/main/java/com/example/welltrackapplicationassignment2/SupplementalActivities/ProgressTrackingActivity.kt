@@ -1,10 +1,10 @@
-package com.example.welltrackapplicationassignment2
+package com.example.welltrackapplicationassignment2.SupplementalActivities
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.welltrackapplicationassignment2.databinding.ActivityProgressTrackingBinding
-import com.example.welltrackapplicationassignment2.datavaseInfo
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
 
 class ProgressTrackingActivity : AppCompatActivity() {
 

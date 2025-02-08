@@ -1,14 +1,8 @@
 package com.example.welltrackapplicationassignment2.Presenter
 
-import android.app.AlarmManager
-import android.app.PendingIntent
-import android.content.Context
-import android.content.Intent
-import androidx.core.content.ContextCompat.getSystemService
 import com.example.welltrackapplicationassignment2.Models.SettingsModel
-import com.example.welltrackapplicationassignment2.Utils.ReminderBroadcastReceiver
 import com.example.welltrackapplicationassignment2.Views.SettingsView
-import com.example.welltrackapplicationassignment2.UserProfile
+import com.example.welltrackapplicationassignment2.Utils.UserProfile
 
 class SettingsPresenter(private val view: SettingsView, private val model: SettingsModel) {
 

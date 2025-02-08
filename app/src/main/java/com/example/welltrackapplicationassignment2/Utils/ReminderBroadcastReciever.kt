@@ -8,8 +8,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.example.welltrackapplicationassignment2.ApplicationPageActivities.MainActivity
 import com.example.welltrackapplicationassignment2.R
-import com.example.welltrackapplicationassignment2.activityClasses.MainActivity
 
 class ReminderBroadcastReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {

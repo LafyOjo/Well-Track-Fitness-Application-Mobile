@@ -6,10 +6,9 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.welltrackapplicationassignment2.R
-import com.example.welltrackapplicationassignment2.StretchProgram
-import com.example.welltrackapplicationassignment2.WorkoutActivity
+import com.example.welltrackapplicationassignment2.Utils.StretchProgram
 import com.example.welltrackapplicationassignment2.databinding.ActivityWorkoutDetailsBinding
-import com.example.welltrackapplicationassignment2.datavaseInfo
+import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
 
 class WorkoutDetailsActivity : AppCompatActivity() {
 

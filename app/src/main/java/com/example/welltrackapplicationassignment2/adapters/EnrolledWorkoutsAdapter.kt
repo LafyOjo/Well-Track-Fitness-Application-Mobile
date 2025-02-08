@@ -1,3 +1,5 @@
+package com.example.welltrackapplicationassignment2.adapters
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

@@ -1,7 +1,7 @@
 package com.example.welltrackapplicationassignment2.Views
 
-import com.example.welltrackapplicationassignment2.StretchProgram
-import com.example.welltrackapplicationassignment2.WorkoutBundle
+import com.example.welltrackapplicationassignment2.Utils.StretchProgram
+import com.example.welltrackapplicationassignment2.Utils.WorkoutBundle
 
 interface MainView {
     fun displayUserGreeting(userName: String)

@@ -57,7 +57,8 @@ android {
 }
 
 dependencies {
-    // Core Android dependencies
+    // Compose Testing
+    androidTestImplementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -79,11 +80,17 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.core.ktx)
+    implementation(libs.androidx.junit.ktx)
 
-    // Testing
+    // Testing (Unit Tests)
     testImplementation(libs.junit)
+
+    // Testing (Instrumentation Tests)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Compose Testing
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
@@ -92,9 +99,6 @@ dependencies {
     // Additional dependencies
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.22")
     implementation("org.jetbrains.kotlin:kotlin-parcelize-runtime:1.8.20") // Use the latest version
-    implementation("org.jetbrains.kotlin:kotlin-parcelize-runtime:1.8.20") // Use the latest version
-
 }
