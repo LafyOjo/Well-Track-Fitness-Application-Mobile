@@ -67,6 +67,22 @@
                 android:layout_marginTop="16dp" />
 
             <TextView
+                android:id="@+id/darkModeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dark_mode"
+                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp" />
+
+            <Switch
+                android:id="@+id/darkModeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp" />
+
+            <TextView
                 android:id="@+id/notificationColorLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

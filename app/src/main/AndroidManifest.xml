@@ -93,8 +93,12 @@
 
         <activity android:name=".SupplementalActivities.WorkoutActivity"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="unspecified"
-            />
+            android:screenOrientation="unspecified" />
+
+        <activity android:name=".SupplementalActivities.Workout3DActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" />
 
         <!-- See All Activity -->
         <activity

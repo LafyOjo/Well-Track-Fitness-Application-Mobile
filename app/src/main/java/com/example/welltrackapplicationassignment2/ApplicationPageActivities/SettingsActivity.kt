@@ -16,6 +16,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import com.example.welltrackapplicationassignment2.Models.SettingsModel
 import com.example.welltrackapplicationassignment2.Presenter.SettingsPresenter
@@ -44,6 +45,11 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
 
         val database = datavaseInfo(this)
         presenter = SettingsPresenter(this, SettingsModel(database))
+
+        val sharedPrefs = getSharedPreferences("user_settings", MODE_PRIVATE)
+        val darkModeEnabled = sharedPrefs.getBoolean("dark_mode_enabled", false)
+        applyDarkMode(darkModeEnabled)
+        binding.darkModeSwitch.isChecked = darkModeEnabled
 
         setupListeners()
         setupBottomNavigation()
@@ -163,6 +169,12 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
             showColorPickerDialog()
         }
 
+        binding.darkModeSwitch.setOnCheckedChangeListener { _, isChecked ->
+            applyDarkMode(isChecked)
+            val prefs = getSharedPreferences("user_settings", MODE_PRIVATE)
+            prefs.edit().putBoolean("dark_mode_enabled", isChecked).apply()
+        }
+
         binding.premiumStatusSwitch.setOnCheckedChangeListener { _, isChecked ->
             presenter.updatePremiumStatus(isChecked)
         }
@@ -199,6 +211,7 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
 
             // Update UI and save file path in SharedPreferences
             binding.profileImageView.setImageURI(Uri.fromFile(file))
+            binding.profileImageView.tag = file.absolutePath
             saveProfileImageUri(file.absolutePath)
         } catch (e: Exception) {
             e.printStackTrace()
@@ -277,24 +290,11 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
     private fun loadProfileImage() {
         val sharedPreferences = getSharedPreferences("user_settings", MODE_PRIVATE)
         val uriString = sharedPreferences.getString("profile_image_uri", null)
-        uriString?.let { uri ->
-            try {
-                // Open the input stream from the content URI
-                val inputStream = contentResolver.openInputStream(Uri.parse(uri))
-                    ?: throw FileNotFoundException("Unable to open input stream for URI: $uri")
-
-                // Save the image locally to avoid Google Photos content provider issues
-                val savedFile = File(filesDir, "profile_image.jpg")
-                val outputStream = FileOutputStream(savedFile)
-                inputStream.copyTo(outputStream)
-                outputStream.close()
-                inputStream.close()
-
-                // Load the image into the ImageView
-                binding.profileImageView.setImageURI(Uri.fromFile(savedFile))
-            } catch (e: Exception) {
-                e.printStackTrace()
-                Toast.makeText(this, "Failed to load image. Please select another.", Toast.LENGTH_SHORT).show()
+        uriString?.let { path ->
+            val file = File(path)
+            if (file.exists()) {
+                binding.profileImageView.setImageURI(Uri.fromFile(file))
+                binding.profileImageView.tag = file.absolutePath
             }
         }
     }
@@ -332,6 +332,15 @@ class SettingsActivity : AppCompatActivity(), SettingsView {
         val sharedPreferences = getSharedPreferences("user_settings", MODE_PRIVATE)
         sharedPreferences.edit().putInt("notification_color", color).apply()
         Toast.makeText(this, "Notification color saved!", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun applyDarkMode(enabled: Boolean) {
+        val mode = if (enabled) {
+            AppCompatDelegate.MODE_NIGHT_YES
+        } else {
+            AppCompatDelegate.MODE_NIGHT_NO
+        }
+        AppCompatDelegate.setDefaultNightMode(mode)
     }
 
     override fun displayUserProfile(profile: UserProfile) {
