@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.welltrackapplicationassignment2.ApplicationPageActivities.MainActivity
 import com.example.welltrackapplicationassignment2.R
 import com.example.welltrackapplicationassignment2.SupplementalActivities.CircularProgressBar
+import com.example.welltrackapplicationassignment2.SupplementalActivities.Workout3DActivity
 import com.example.welltrackapplicationassignment2.Utils.datavaseInfo
 import com.example.welltrackapplicationassignment2.databinding.ActivityWorkoutBinding
 
@@ -22,6 +23,7 @@ class WorkoutActivity : AppCompatActivity() {
     private lateinit var timerText: TextView
     private lateinit var restartButton: Button
     private lateinit var pauseButton: Button
+    private lateinit var view3dButton: Button
     private lateinit var skipButton: TextView
     private lateinit var circularProgressBar: CircularProgressBar
     private lateinit var database: datavaseInfo
@@ -45,6 +47,7 @@ class WorkoutActivity : AppCompatActivity() {
         timerText = findViewById(R.id.timer)
         restartButton = findViewById(R.id.restartButton)
         pauseButton = findViewById(R.id.pauseButton)
+        view3dButton = findViewById(R.id.view3dButton)
         skipButton = findViewById(R.id.skipButton)
         circularProgressBar = findViewById(R.id.circularProgressBar)
 
@@ -96,6 +99,11 @@ class WorkoutActivity : AppCompatActivity() {
                 pauseButton.text = "Resume"
             }
             isPaused = !isPaused
+        }
+
+        view3dButton.setOnClickListener {
+            val intent = Intent(this, Workout3DActivity::class.java)
+            startActivity(intent)
         }
 
         // Skip workout
