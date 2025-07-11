@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+# Node and React Native files
+node_modules/
+react-native/node_modules/
+# React Native build directories
+react-native/android/app/build/
+react-native/ios/build/
